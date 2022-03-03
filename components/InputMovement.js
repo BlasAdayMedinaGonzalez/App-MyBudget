@@ -12,8 +12,9 @@ const InputMovement = ({addMovementHandler, addModal,editValidate, editMovementH
 
 
   const amountHandler = (amount) => {
-    setamountEdit(amount);
-    setamount(amount);
+    const amountchecked = amount.replace(/[^-(1-9)]/g,'')
+    setamountEdit(amountchecked);
+    setamount(amountchecked);
   };
   const dateHandler = (date) => {
     setdateEdit(date);
