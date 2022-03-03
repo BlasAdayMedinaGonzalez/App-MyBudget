@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
+import { useState } from "react";
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './components/Header';
+import Colors from "./constants/Colors";
 
 export default function App() {
+  const [budget, setBudget] = useState(200);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.screen}>
+      <Header title="My Budget: " budget={budget} />
+      <View styles={styles.listContainer}>
+        {/* <FlatList data={bookList} renderItem={itemData => {
+          return (
+            <Item 
+            itemData={itemData.item} 
+            onDelete={ () => deleteBookHandler(itemData.item.key)} 
+            onEdit= { () => {setshowModal(true) ; seteditValidate(true); setItemKey(itemData.item.key)}} 
+            />)
+        }} /> */}
+        
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: Colors.pinkbright
+  },
+  listContainer: {
+    width: "100%",
+    padding: 20,
   },
 });
