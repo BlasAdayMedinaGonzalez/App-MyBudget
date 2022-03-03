@@ -8,7 +8,7 @@ const Item = ({itemData, onDelete, onEdit}) => {
     <View style={styles.item}>
       <View style={styles.textInfo}>
         <View styles={styles.amountText}>
-          <Text >Amount: {amount}</Text>
+          <Text>Amount: {amount}</Text>
         </View>
         <Text styles={styles.itemText}>Date: {date}</Text>
         <Text styles={styles.itemText}>Description: {desc}</Text>

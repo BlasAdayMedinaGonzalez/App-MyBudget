@@ -2,11 +2,17 @@ import {View, StyleSheet, Text} from 'react-native';
 import Colors from '../constants/Colors';
 
 const Header = ({title,budget}) => {
-  
+  let confirmOutput;
+  const negativeNumber = parseInt(budget);
+  if (negativeNumber < 0) {
+    confirmOutput =  <Text style={styles.budget}>{budget}€</Text>
+  } else {
+    confirmOutput =  <Text style={styles.title}>{budget}€</Text>
+  }
   return (
     <View style={styles.header}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.title}>{budget}€</Text>
+        {confirmOutput}
     </View>
   )
 }
