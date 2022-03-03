@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Colors from "../constants/Colors";
 
 const Item = ({itemData, onDelete, onEdit}) => {
@@ -7,9 +7,7 @@ const Item = ({itemData, onDelete, onEdit}) => {
   return (
     <View style={styles.item}>
       <View style={styles.textInfo}>
-        <View styles={styles.amountText}>
-          <Text>Amount: {amount}</Text>
-        </View>
+        <Text styles={styles.itemText}>Amount: {amount}</Text>
         <Text styles={styles.itemText}>Date: {date}</Text>
         <Text styles={styles.itemText}>Description: {desc}</Text>
       </View>
@@ -33,7 +31,7 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: "row",
     justifyContent: "space-around",
-    backgroundColor: Colors.pinkbright,
+    backgroundColor: Colors.orange,
     width: "100%",
     height: 110,
     borderWidth: 1,
@@ -63,9 +61,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 15,
     fontWeight: "bold"
-  },
-  amountText: {
-    color: Colors.red
   }
 });
 

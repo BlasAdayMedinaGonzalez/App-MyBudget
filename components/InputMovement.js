@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal, Button, StyleSheet, TextInput, View } from "react-native";
+import Colors from "../constants/Colors";
 
 const InputMovement = ({addMovementHandler, addModal,editValidate, editMovementHandler}) => {
   const [amount, setamount] = useState("");
@@ -45,7 +46,7 @@ const InputMovement = ({addMovementHandler, addModal,editValidate, editMovementH
   
   if (!editValidate) {
     return (
-        <Modal visible={addModal} animationType={"slide"} transparent={true}>
+        <Modal visible={addModal} animationType={"slide"}>
           <View style={styles.inputMovement}>
             <TextInput
               style={styles.movementInput}
@@ -75,7 +76,7 @@ const InputMovement = ({addMovementHandler, addModal,editValidate, editMovementH
       );
   } else {
     return (
-        <Modal visible={addModal} animationType={"slide"} transparent={true}>
+        <Modal visible={addModal} animationType={"slide"} >
           <View style={styles.inputMovement}>
             <TextInput
               style={styles.movementInput}
@@ -113,6 +114,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     flex: 1,
+    backgroundColor: Colors.green
   },
   movementInput: {
     width: "75%",
